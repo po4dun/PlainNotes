@@ -26,16 +26,16 @@ Note that adding this repository will block installing original PlainNotes via p
 
 ## Usage
 
-If opening fence is either ` ```s `, ` ```{s} ` or ` ```stata `, fenced code block will highlight Stata syntax and support any key bindings working in Stata source(`.do` files).
+If opening fence is either ` ```s `, ` ```{s} `, ` ```stata ` or ` ```{stata} `, fenced code block will highlight Stata syntax and support any key bindings working in Stata source(`.do` files).
 
 If opening fence is either ` ```r ` or ` ```{r} `, fenced code block will highlight R syntax and support any key bindings working in R source(`.R` files).
 
-Note that default syntax highlighting scheme is set to Monokai Pro.
+Note that default syntax highlighting scheme is set to [Monokai Pro](https://packagecontrol.io/packages/Theme%20-%20Monokai%20Pro).
 
 
 ## Key Bindings
 
-Below are some example key bindings that you can manually add to `Preferences > Key Bindings`. In order to apply those key bindings, you need to install [Multicommand](https://packagecontrol.io/packages/Multicommand) via package control first. For R users, I recommend using [SendCode](https://packagecontrol.io/packages/SendCode) and [Terminus](https://packagecontrol.io/packages/Terminus) to execute R code within Sublime Text.
+Below are some example key bindings that you can manually add to `Preferences > Key Bindings`. In order to apply those key bindings, you need to install [Multicommand](https://packagecontrol.io/packages/Multicommand) via package control first. For Stata users, I recommend using [Markstat](https://data.princeton.edu/stata/markdown) to integrate Stata results into Markdown document. For R users, I recommend using [SendCode](https://packagecontrol.io/packages/SendCode) and [Terminus](https://packagecontrol.io/packages/Terminus) to execute R code within Sublime Text.
 
 ### for Stata
 

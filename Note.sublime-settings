@@ -1,9 +1,10 @@
 {
-  "color_scheme": "Packages/PlainNotes/Color Schemes/Sticky-Yellow.tmTheme",
+  "color_scheme": "Packages/PlainNotes/Color Schemes/Sticky-White.tmTheme",
   "spelling_selector": "text - meta.definition.language.raw.block.fenced - markup.raw.block.fenced variable - markup.raw.block.fenced keyword - markup.underline.link",
   "enable_table_editor": true,
   "line_numbers": false,
   "gutter": true,
+  "highlight_line": false,
   "fold_buttons": false,
   "margin": 16,
   "draw_indent_guides": false,

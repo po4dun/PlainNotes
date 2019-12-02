@@ -1,3 +1,213 @@
+# PlainNotes for Stata & R
+
+This repository adds support for Stata & R with native key bindings to [PlainNotes](https://packagecontrol.io/packages/PlainNotes).
+
+## Installation
+
+### manual
+
+0. Remove `PlainNotes` previously installed.
+1. Select `Preferences-Browse Packages...` from the top menu in Sublime Text.
+2. Clone this repository into that folder.
+3. Rename the cloned folder to `PlainNotes` if it is `PlainNotes-master`.
+4. Check your path is identical to the following:
+    - `~\AppData\Roaming\Sublime Text 3\Packages\PlainNotes` (Windows)
+    - `~/Library/Application Support/Sublime Text 3/Packages/PlainNotes` (macOS)
+
+### via package control
+
+0. Remove `PlainNotes` previously installed.
+1. Press `ctrl`/`command`+`shift`+`p`, `p`, `c`, `a` and select `Package Control: Add Repository`.
+2. Copy & paste [the link to this repository](https://github.com/jh-min/PlainNotes) in the form.  
+Note that adding this repository will block installing original PlainNotes via package control.
+3. Press `ctrl`/`command`+`shift`+`p`, `p`, `c`, `i`, `Enter`.
+4. Search & install `PlainNotes` from the drop-down list.
+
+
+## Usage
+
+If opening fence is either ` ```s `, ` ```{s} ` or ` ```stata `, fenced code block will highlight Stata syntax and support any key bindings working in Stata source(`.do` files).
+
+If opening fence is either ` ```r ` or ` ```{r} `, fenced code block will highlight R syntax and support any key bindings working in R source(`.R` files).
+
+Note that default syntax highlighting scheme is set to Monokai Pro.
+
+
+## Key Bindings
+
+Below are some example key bindings that you can manually add to `Preferences > Key Bindings`. In order to apply those key bindings, you need to install [Multicommand](https://packagecontrol.io/packages/Multicommand) via package control first. For R users, I recommend using [SendCode](https://packagecontrol.io/packages/SendCode) and [Terminus](https://packagecontrol.io/packages/Terminus) to execute R code within Sublime Text.
+
+### for Stata
+
+#### [StataEditor](https://packagecontrol.io/packages/StataEditor) (Windows)
+
+- remapping key bindings to execute Stata code line by line pressing `ctrl`+`d` and whole code pressing `ctrl`+`alt`+`d`:
+
+```json
+[ /* square brackets are only needed if you have never defined Key Bindings before */
+  // StataEditor
+  { /* remap StataEditor to mimic SendCode */
+    "keys": ["ctrl+d"],
+    "command": "multicommand",
+    "args": {
+      "commands": [
+        {
+          "command": "stata_execute",
+          "args": {"Mode": "do", "Selection": "line"},
+        },
+        {
+          "command": "move_to",
+          "args": {"to": "hardeol"},
+        },
+        {
+          "command": "move",
+          "args": {"by": "lines", "forward": true},
+        },
+        {
+          "command": "move_to",
+          "args": {"to": "hardbol"},
+        },
+      ],
+    },
+    "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "source.stata" }
+    ],
+  },
+  { /* remap StataEditor */
+    "keys": ["ctrl+alt+d"],
+    "command": "stata_execute",
+    "args": {"Mode": "do", "Selection": "default"},
+    "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "source.stata" }
+    ],
+  },
+] /* square brackets are only needed if you have never defined Key Bindings before */
+```
+
+#### [Improved Stata Editor](https://packagecontrol.io/packages/Stata%20Improved%20Editor) (macOS)
+
+- remapping key bindings to execute Stata code line by line pressing `command`+`d` and whole code pressing `command`+`option`+`d`:
+
+```json
+[ /* square brackets are only needed if you have never defined Key Bindings before */
+  // Improved Stata Editor
+  { /* remap Improved Stata Editor to mimic SendCode */
+    "keys": ["super+d"],
+    "command": "multicommand",
+    "args": {
+      "commands": [
+        {
+          "command": "lines_to_stata",
+        },
+        {
+          "command": "move_to",
+          "args": {"to": "hardeol"},
+        },
+        {
+          "command": "move",
+          "args": {"by": "lines", "forward": true},
+        },
+        {
+          "command": "move_to",
+          "args": {"to": "hardbol"},
+        },
+      ],
+    },
+    "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "source.stata" }
+    ],
+  },
+  { /* remap Improved Stata Editor */
+    "keys": ["super+option+d"],
+    "command": "piu_sign",
+    "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "source.stata" }
+    ],
+  },
+] /* square brackets are only needed if you have never defined Key Bindings before */
+```
+
+### for R
+
+#### Windows
+
+- remapping key bindings to insert `<-` pressing `alt`+`-` and delete `<-` pressing `backspace` just once:
+
+```json
+[ /* square brackets are only needed if you have never defined Key Bindings before */
+  { /* insert R assignment operator easily */
+    "keys":["alt+-"],
+    "command": "insert",
+    "args": {"characters": "<-"},
+    "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "source.r" },
+    ],
+  },
+  { /* delete R assignment operator easily */
+    "keys": ["backspace"],
+    "command": "multicommand",
+    "args": {
+      "commands": [
+        {
+          "command": "left_delete"
+        },
+        {
+          "command": "left_delete"
+        },
+      ],
+    },
+    "context": [
+      { "key": "selector", "operator": "equal", "operand": "source.r" },
+          { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+          { "key": "preceding_text", "operator": "regex_contains", "operand": "<-$", "match_all": true }
+    ],
+  },
+] /* square brackets are only needed if you have never defined Key Bindings before */
+```
+
+#### macOS
+
+- remapping key bindings to insert `<-` pressing `option`+`-` and delete `<-` pressing `backspace` just once:
+
+```json
+[ /* square brackets are only needed if you have never defined Key Bindings before */
+  { /* insert R assignment operator easily */
+    "keys":["option+-"],
+    "command": "insert",
+    "args": {"characters": "<-"},
+    "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "source.r" },
+    ],
+  },
+  { /* delete R assignment operator easily */
+    "keys": ["backspace"],
+    "command": "multicommand",
+    "args": {
+      "commands": [
+        {
+          "command": "left_delete"
+        },
+        {
+          "command": "left_delete"
+        },
+      ],
+    },
+    "context": [
+      { "key": "selector", "operator": "equal", "operand": "source.r" },
+          { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+          { "key": "preceding_text", "operator": "regex_contains", "operand": "<-$", "match_all": true }
+    ],
+  },
+] /* square brackets are only needed if you have never defined Key Bindings before */
+```
+
+
 
 # [PlainNotes](https://github.com/aziz/PlainNotes)
 Simple and pleasant authoring and note taking for SublimeText.

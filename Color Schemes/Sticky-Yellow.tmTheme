@@ -1049,7 +1049,7 @@
 			<key>name</key>
 			<string>Fenced Code Block Punctuations and language name</string>
 			<key>scope</key>
-			<string>meta.definition.language.raw.block.fenced, meta.language punctuation.definition.raw.block.fenced</string>
+			<string>meta.definition.language.raw.block.fenced, meta.language punctuation.definition.raw.block.fenced, markup.raw.block.markdown punctuation.section, markup.raw.block.markdown punctuation.separator</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

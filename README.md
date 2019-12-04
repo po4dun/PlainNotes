@@ -4,22 +4,12 @@ This repository adds support for Stata & R with native key bindings to [PlainNot
 
 ## Installation
 
-### manual
-
-0. Remove `PlainNotes` previously installed.
-1. Select `Preferences-Browse Packages...` from the top menu in Sublime Text.
-2. Clone this repository into that folder.
-3. Rename the cloned folder to `PlainNotes` if it is `PlainNotes-master`.
-4. Check your path is identical to the following:
-    - `~\AppData\Roaming\Sublime Text 3\Packages\PlainNotes` (Windows)
-    - `~/Library/Application Support/Sublime Text 3/Packages/PlainNotes` (macOS)
-
-### via package control
+You can install this repository either manually or via Package Control. I recommend the latter way since it allows users to install and automatically update packages from GitHub.
 
 0. Remove `PlainNotes` previously installed.
 1. Press `ctrl`/`command`+`shift`+`p`, `p`, `c`, `a` and select `Package Control: Add Repository`.
 2. Copy & paste [the link to this repository](https://github.com/jh-min/PlainNotes) in the form.  
-Note that adding this repository will block installing original PlainNotes via package control.
+Note that adding this repository will block installing original `PlainNotes` via Package Control.
 3. Press `ctrl`/`command`+`shift`+`p`, `p`, `c`, `i`, `Enter`.
 4. Search & install `PlainNotes` from the drop-down list.
 
@@ -44,7 +34,7 @@ Below are some example key bindings that you can manually add to `Preferences > 
 - remapping key bindings to execute Stata code line by line pressing `ctrl`+`d` and whole code pressing `ctrl`+`alt`+`d`:
 
 ```json
-[ /* square brackets are only needed if you have never defined Key Bindings before */
+[ /* the outermost square brackets are only needed if you have never defined Key Bindings before */
   // StataEditor
   { /* remap StataEditor to mimic SendCode */
     "keys": ["ctrl+d"],
@@ -83,7 +73,7 @@ Below are some example key bindings that you can manually add to `Preferences > 
       { "key": "selector", "operator": "equal", "operand": "source.stata" }
     ],
   },
-] /* square brackets are only needed if you have never defined Key Bindings before */
+] /* the outermost square brackets are only needed if you have never defined Key Bindings before */
 ```
 
 #### [Improved Stata Editor](https://packagecontrol.io/packages/Stata%20Improved%20Editor) (macOS)
@@ -91,7 +81,7 @@ Below are some example key bindings that you can manually add to `Preferences > 
 - remapping key bindings to execute Stata code line by line pressing `command`+`d` and whole code pressing `command`+`option`+`d`:
 
 ```json
-[ /* square brackets are only needed if you have never defined Key Bindings before */
+[ /* the outermost square brackets are only needed if you have never defined Key Bindings before */
   // Improved Stata Editor
   { /* remap Improved Stata Editor to mimic SendCode */
     "keys": ["super+d"],
@@ -128,7 +118,7 @@ Below are some example key bindings that you can manually add to `Preferences > 
       { "key": "selector", "operator": "equal", "operand": "source.stata" }
     ],
   },
-] /* square brackets are only needed if you have never defined Key Bindings before */
+] /* the outermost square brackets are only needed if you have never defined Key Bindings before */
 ```
 
 ### for R
@@ -138,7 +128,7 @@ Below are some example key bindings that you can manually add to `Preferences > 
 - remapping key bindings to insert `<-` pressing `alt`+`-` and delete `<-` pressing `backspace` just once:
 
 ```json
-[ /* square brackets are only needed if you have never defined Key Bindings before */
+[ /* the outermost square brackets are only needed if you have never defined Key Bindings before */
   { /* insert R assignment operator easily */
     "keys":["alt+-"],
     "command": "insert",
@@ -167,7 +157,7 @@ Below are some example key bindings that you can manually add to `Preferences > 
           { "key": "preceding_text", "operator": "regex_contains", "operand": "<-$", "match_all": true }
     ],
   },
-] /* square brackets are only needed if you have never defined Key Bindings before */
+] /* the outermost square brackets are only needed if you have never defined Key Bindings before */
 ```
 
 #### macOS
@@ -175,7 +165,7 @@ Below are some example key bindings that you can manually add to `Preferences > 
 - remapping key bindings to insert `<-` pressing `option`+`-` and delete `<-` pressing `backspace` just once:
 
 ```json
-[ /* square brackets are only needed if you have never defined Key Bindings before */
+[ /* the outermost square brackets are only needed if you have never defined Key Bindings before */
   { /* insert R assignment operator easily */
     "keys":["option+-"],
     "command": "insert",
@@ -204,7 +194,7 @@ Below are some example key bindings that you can manually add to `Preferences > 
           { "key": "preceding_text", "operator": "regex_contains", "operand": "<-$", "match_all": true }
     ],
   },
-] /* square brackets are only needed if you have never defined Key Bindings before */
+] /* the outermost square brackets are only needed if you have never defined Key Bindings before */
 ```
 
 

@@ -297,7 +297,7 @@ contexts:
           pop: true
         - include: scope:source.python
   fenced-r:
-    - match: '^(\s*[`~]{3,})\s*(r|{r}|{r(\s|\,).*})\s*$' 
+    - match: '((?:^|\G)\s*[`~]{3,})\s*(r|{r}|{r(\s|\,).*})\s*$' 
       captures:
         1: punctuation.definition.raw.block.fenced.markdown
         2: meta.definition.language.raw.block.fenced.markdown
@@ -311,7 +311,7 @@ contexts:
           pop: true
         - include: scope:source.r
   fenced-stata:
-    - match: '^(\s*[`~]{3,})\s*(s|stata|{s}|{s(\s|\,).*}|{stata}|{stata(\s|\,).*})\s*$'
+    - match: '((?:^|\G)\s*[`~]{3,})\s*(s|stata|{s}|{s(\s|\,).*}|{stata}|{stata(\s|\,).*})\s*$'
       captures:
         1: punctuation.definition.raw.block.fenced.markdown
         2: meta.definition.language.raw.block.fenced.markdown

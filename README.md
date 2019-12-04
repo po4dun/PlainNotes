@@ -197,7 +197,7 @@ Below are some example key bindings that you can manually add to `Preferences > 
 ] /* the outermost square brackets are only needed if you have never defined Key Bindings before */
 ```
 
-
+---
 
 # [PlainNotes](https://github.com/aziz/PlainNotes)
 Simple and pleasant authoring and note taking for SublimeText.

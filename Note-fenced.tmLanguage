@@ -294,7 +294,7 @@
     <key>fenced-stata</key>
     <dict>
         <key>begin</key>
-        <string>((?:^|\G)\s*[`~]{3,})\s*(s|s[/]|stata|{s}|{s(\s|\,).*}|{stata}|{stata(\s|\,).*})\s*$</string>
+        <string>((?:^|\G)\s*[`~]{3,})\s*(s|s\/|stata|{s}|{s(\s|\,).*}|{stata}|{stata(\s|\,).*})\s*$</string>
         <key>end</key>
         <string>^(\1)[ \t]*(\n|$)</string>
         <key>name</key>
